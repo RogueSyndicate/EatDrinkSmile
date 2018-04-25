@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Eat Drink Smile: Check out the Restaurants near you!</title>
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="utf-8">
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="EatDrinkSmile.css" />
+        <script src="EatDrinkSmile.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaLEK4RygX7DguwWBugf-Lhv-vwIeoifA&callback=initMap"></script>
+    </head>
+    
+    <body>
+        <div id = "header">
+            <h1>Welcome To Eat Drink Smile!</h1>
+        </div>
+        
+        <div class = "row">
+            <div class = "col-md-4">
+                <!-- Restaurant Dropdown Selection -->
+                <div class = form-group>
+                    <label for = "restaurantSelected">Select a Restaurant:</label>
+                    <select id = "restaurantSelected" name = "restaurantSelected" class = "form-control">
+                        <option value = "">Select Restaurant</option>
+                        <option value = "0">Sophie's Bistro</option>
+                        <option value = "1">Old Man Rafferty's</option>
+                        <option value = "2">Veganized</option>
+                        <option value = "3">Clydz</option>
+                        <option value = "4">Due Mari</option>
+                        <option value = "5">Steakhouse 85</option>
+                        <option value = "6">Stuff Yer Face</option>
+                        <option value = "7">KBG Korean BBQ and Grill</option>
+                        <option value = "8">The Frog and The Peach</option>
+                        <option value = "9">Harvest Moon Brewery</option>
+                    </select>
+                </div>
+            </div>
+            <div class = "col-md-8">
+                <!-- Bootstrap area -->
+            </div>
+        </div>
+        
+        <div class = "row">
+            <div  id = "map" class = "col-md-4 table-bordered">
+                <!-- Initialize Map here -->
+            </div>
+            <div class = "col-md-8">
+                <div class = "row">
+                    <h3>Restaurant Information:</h3>
+                    <div id = "RestaurantInformation">
+                        <!-- Append Restaurant Info here -->
+                    </div>
+                    <ul class = "list-group" id = "hoursOfOperation">
+                        <!-- Append Restaurant Hours of Operation here -->
+                    </ul>
+                </div>
+                <div class = "row">
+                    <!-- Restaurant rating system using radio input buttons -->
+                    <form id = "ratingSelected" role = "form">
+                        <div class = "form-group" id = "ratingSelected">
+                            <label for = "ratingSelected">Rate The Restaurant:</label>
+                            <br>
+                            <input class="ratingC" type="radio" idea="r1" name="rating" value = "1"/> 1
+                            <input class="ratingC" type="radio" idea="r2" name="rating" value = "2"/> 2
+                            <input class="ratingC" type="radio" idea="r3" name="rating" value = "3"/> 3
+                            <input class="ratingC" type="radio" idea="r4" name="rating" value = "4"/> 4
+                            <input class="ratingC" type="radio" idea="r5" name="rating" value = "5"/> 5
+                        </div>
+                        <button id = "ratingSelected">Submit Rating</button>
+                    </form>
+                    <div id = "errorSectionRating">
+                        <!-- Errors for rating submission to be appended here -->
+                    </div>
+                    <div id = "successSectionRating">
+                        <!-- Success message for rating submission to be appeneded here  -->
+                    </div>
+                    <div id = "restaurantRating">
+                        <!-- Restaurant rating to be appended here upon retrieval -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class = "row">
+            <div class = "col-md-4">
+                <!-- Comments submission forms -->
+                <form id = "commentSubmit" role = "form">
+                    <h3>Post a Comment:</h3>
+                    <div class = "row">
+                        <div class = "col-md-6">
+                            <div class = "form-group">
+                                <label for = "fistName">First Name</label>
+                                <input type = "text" class = "form-control" id = "firstName" name = "firstName" placeholder = "E.g. Hemil"/>
+                            </div>
+                        </div>
+                        <div class = "col-md-6">
+                            <div class = "form-group">
+                                <label for = "lastInit">Last Name Initial</label>
+                                <input type = "text" class = "form-control" id = "lastInit" name = "lastInit" placeholder = "E.g. P"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "col-md-12" id = "errorSection">
+                            <!-- Errors for comment submission to be appended here -->
+                        </div>
+                    </div>
+                    <div class = "form-group">
+                        <label for = "commentBody">Comment Text</label>
+                        <input type = "text" class = "form-control" id = "commentBody" name = "commentBody" placeholder = "Enter comment here... (Max 500 characters)"/>
+                    </div>
+                    <button id = "commentSubmit">Submit Comment</button>
+                </form>
+                <div id = "successSection">
+                    <!-- Success message for comment submission to be appended here -->
+                </div>
+                
+                <!-- Existing comments section -->
+                <div class = "row" id = "commentsSection">
+                    <div class = "col-md-12" id = "Comments">
+                        <h3>Comments:</h3>
+                        <ul class = "list-group" id = "commentsSectionList">
+                            <!-- Existing comments to be appended here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Social Media APIs here -->
+            <div class = "col-md-8">
+                <h3>#EatDrinkSmile Feed:</h3>
+                <div class = "col-md-6" id = "Twitter">
+                    <ul class="list-group" id="twitterFeed">
+                        <!-- Tweets to be appended here -->
+                    </ul>
+                </div>
+                <div class = "col-md-6" id = "Instagram">
+                    <ul class="list-group" id="instaFeed">
+                        <!-- Instagram posts to be appended here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

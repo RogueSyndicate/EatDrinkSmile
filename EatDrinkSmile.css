@@ -1,0 +1,162 @@
+/* Site formatting and styling */
+body {
+    background: url("Simply Black.jpg")no-repeat scroll 0 0 / 100% 100% transparent !important;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+#header {
+    text-align: center;
+}
+
+#R {
+    font-family: Formata BQ sans-serif;
+    color: red;
+}
+
+button {
+    border: none;
+    border-radius: 6px;
+    background-color: white;
+    color: black;
+}
+
+button:active {
+    background: transparent;
+    border: 2px solid #FFFFFF;
+}
+
+/* Google Map Formatting & Styling */
+
+#map {
+    height: 440px;
+}
+
+#markerBarName {
+    font-weight: bold;
+    color: black;
+}
+
+#markerAddress {
+    color: black;
+}
+
+/* Restaurant Info Formatting & Styling */
+.restaurantInformation {
+    font-style: italic;
+}
+
+#hoursOfOperation {
+    padding-left: 20px;
+    list-style-type: square;
+}
+
+.closedDay {
+    font-weight: bold;
+    color: red;
+}
+
+#errorSectionRating > p {
+    font-weight: bold;
+    color: red;
+}
+
+#successSectionRating > p {
+    font-weight: bold;
+    color: green;
+}
+
+/* Twitter API Formatting & Styling */
+#Twitter {
+    height: 500px;
+    overflow: scroll;
+}
+
+#twitterFeed .tweet {
+    background: transparent;
+}
+
+#twitterFeed .tweet .user {
+    font-weight: bold;
+}
+
+#twitterFeed .tweet .badge.favorites {
+    background-color: #FF0000;
+}
+
+#twitterFeed .tweet .badge.retweets {
+    background-color: #008000;
+}
+
+/* Instagram API Formatting Styling */
+#Instagram {
+    height: 500px;
+    overflow: scroll;
+}
+
+#instaFeed .post {
+    background: transparent;
+}
+
+#instaFeed .post .badge.likes {
+    background-color: #FF0000;
+}
+
+/* Comments section Formatting &  Styling */
+#Comments {
+    height: 350px;
+    overflow: scroll;
+}
+
+#commentsSectionList .comment {
+    background: transparent;
+}
+
+#commentsSectionList .comment .commentNames {
+    font-weight: bold;
+}
+
+#errorSection > p {
+    font-weight: bold;
+    color: red;
+}
+
+#successSection > p {
+    font-weight: bold;
+    color: green;
+}
+
+/* Rating Formatting & Styling */
+.currentBarRating {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#badRating {
+    color: #FF0000;
+}
+
+#poorRating {
+    color: #FF9900;
+}
+
+#okayRating {
+    color: #CCCC00;
+}
+
+#goodRating {
+    color: #73e600;
+}
+
+#greatRating {
+    color: #29a329;
+}
+
+#NARating {
+    color: #000000;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: normal;
+}
